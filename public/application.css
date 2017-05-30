@@ -1,0 +1,8 @@
+.panel-header {
+	float: left;
+    padding: 4px 14px;
+    border-radius: 14px;
+}
+.panel-header-server { background: #fbeed5; }
+.panel-header-client { background: #d6e9c6; }
+.panel-header-app    { background: #c35752; }

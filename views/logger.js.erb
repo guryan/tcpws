@@ -1,0 +1,10 @@
+// var ws = new WebSocket("<%= ENV['RACK_ENV'] == 'production' ? 'wss://' : 'ws://' %>" + window.document.location.host + window.location.pathname);
+var ws = new WebSocket("wss://" + window.document.location.host + window.location.pathname);
+ws.onmessage = function(message) {
+var sender, data = message.data.split("=");
+sender = data[0];
+data = "<div class='panel'><div class='panel-header panel-header-" + sender + "'>" + sender +":</div>" + 
+"<div class='panel-body panel-body-" + sender +"'>" + data[1] + "</div></div>";
+$("#logger").append(data);
+$("body").animate({ scrollTop: $(".panel:last").position()["top"] }, 200);
+};
